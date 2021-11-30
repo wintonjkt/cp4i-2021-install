@@ -23,11 +23,11 @@
         interval: 45m
   ```
   
-  ### Step 2: Install Cloud Pak for Integration Operator
+  ## Step 2: Install Cloud Pak for Integration Operator
   
   Link: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.3?topic=installing-operators-using-openshift-console
   
-  Add scc restricted to user 
+  Add scc restricted to user
   
   ```
   oc adm policy add-scc-to-user restricted -z default
@@ -35,24 +35,25 @@
  
   You may choose to install all capabilities or selected capabilities
   
-  ### A few tips
+  ## A few tips
   
   1. Use manual approval to avoid auto upgrade
   2. Install in a namespace instead of all namespaces
 
-  ### Troubleshooting Operator Installation
+  ## Troubleshooting Operator Installation
   
-  Check subscription health
+  ### Check subscription health
   ```
   oc get subs
   oc describe subs subs-name
   ```
   
-  Check csv 
+  ### Check csv 
   ```
   oc get csv 
   oc describe csv csv-name 
   ```
-  Operator installation in UpgradePending status
+  ### Operator installation in UpgradePending status
+  
   Link: https://www.ibm.com/docs/en/cloud-paks/cp-management/2.2.x?topic=upgrade-operator-shows-upgradepending-status-olm-known-issue
   
