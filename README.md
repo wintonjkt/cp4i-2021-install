@@ -29,4 +29,22 @@
  
   You may choose to install all capabilities or selected capabilities
   
+  ### A few tips
+  
+  1. Use manual approval to avoid auto upgrade
+  2. Install in a namespace instead of all namespaces
+
+  ### Troubleshooting Operator Installation
+  
+  Check subscription health
+  ```
+  oc get subs
+  oc describe subs subs-name
+  ```
+  
+  Check csv 
+  ```
+  oc get csv 
+  oc describe csv csv-name 
+  ```
   
