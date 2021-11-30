@@ -53,4 +53,6 @@
   oc get csv 
   oc describe csv csv-name 
   ```
+  Operator installation in UpgradePending status
+  Link: https://www.ibm.com/docs/en/cloud-paks/cp-management/2.2.x?topic=upgrade-operator-shows-upgradepending-status-olm-known-issue
   
