@@ -48,7 +48,8 @@ oc secrets link default ibm-entitlement-key --for=pull
   oc adm policy add-scc-to-user restricted -z default
   ```
  
-  You may choose to install all capabilities or selected capabilities
+  You may choose to install all capabilities or selected capabilities, start with common services first and then platform navigator.
+  Platform navigator password is in platform-auth-idp-credentials secret in ibm-common-services project.   
   
   ## A few tips
   
