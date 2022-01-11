@@ -14,10 +14,10 @@
     name: ibm-operator-catalog
     namespace: openshift-marketplace
   spec:
-    displayName: IBM Operator Catalog
-    image: 'icr.io/cpopen/ibm-operator-catalog:latest'
+    displayName: "IBM Operator Catalog" 
     publisher: IBM
     sourceType: grpc
+    image: docker.io/ibmcom/ibm-operator-catalog
     updateStrategy:
       registryPoll:
         interval: 45m
