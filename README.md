@@ -49,7 +49,11 @@ oc secrets link default ibm-entitlement-key --for=pull
   ```
  
   You may choose to install all capabilities or selected capabilities, start with common services first and then platform navigator.
-  Platform navigator password is in platform-auth-idp-credentials secret in ibm-common-services project.   
+  Platform navigator password is in platform-auth-idp-credentials secret in ibm-common-services project.  
+  
+  1. Install IBM Common Services Operator 
+  2. Install IBM API Connect Operator
+  3. Install API Connect cluster from IBM API Connect Operator
   
   ## A few tips
   
@@ -108,6 +112,12 @@ oc secrets link default ibm-entitlement-key --for=pull
   exit;
   ```
   7) Attempt to register the portal service again via the UI. If still doesn't help please gather a new set of logs to use
+  
+  ### API Connect Lab Guide
+  
+  https://ibm-garage-tsa.github.io/cp4i-demohub/APICDevJam
+  
+  
   
   
   
