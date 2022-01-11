@@ -73,3 +73,41 @@ oc secrets link default ibm-entitlement-key --for=pull
   
   Link: https://www.ibm.com/docs/en/cloud-paks/cp-management/2.2.x?topic=upgrade-operator-shows-upgradepending-status-olm-known-issue
   
+  ### Reset CMC password
+  
+  Download the apicops tool from https://github.com/ibm-apiconnect/apicops/releases/tag/v0.10.48 and try to change the admin password in the following:
+  ```
+  apicops-v10  password:reset-cloud-admin
+  ```
+  
+  ### Clear Portal DB
+  
+  1- kubectl get pods
+  2- Identify the portal www pod and access the admin container within it using the following command:
+  ```
+  kubectl exec -it portal-apic-portal-www-<blah> -n <namespace> -c admin bash
+  ```
+  3- Access the database with the following command:
+  ```
+  mysql
+  ```
+  4) Remove the record in the portal service table with the following command:
+  ```
+  select * from portal.service;
+  ```
+  If there is already one row, delete it with:
+  ```
+  delete from portal.service;
+  ```
+  5) Confirm that the portal service table is empty with the following command:
+  ```
+  select * from portal.service;
+  ```
+  6) Exit out of the database with:
+  ```
+  exit;
+  ```
+  7) Attempt to register the portal service again via the UI. If still doesn't help please gather a new set of logs to use
+  
+  
+  
