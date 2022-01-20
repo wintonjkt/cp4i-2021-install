@@ -113,11 +113,17 @@ oc secrets link default ibm-entitlement-key --for=pull
   ```
   7) Attempt to register the portal service again via the UI. If still doesn't help please gather a new set of logs to use
   
+  ### Check IOPS of Storage
+  
+  
+1: kubectl exec -ti apicdev-ptl-7ac37c61-db-0 -c db -- bash -ic "fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=fiotest --filename=/tmp/testfio --bs=4k --iodepth=64 --size=1G --readwrite=randrw --rwmixread=75; rm -f /tmp/testfio" > iops-test-db-pod.txt  
+2: kubectl exec -ti apicdev-ptl-7ac37c61-www-0 -c admin -- bash -ic "fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=fiotest --filename=/tmp/testfio --bs=4k --iodepth=64 --size=1G --readwrite=randrw --rwmixread=75; rm -f /tmp/testfio" > iops-test-www-pod.txt  
+  
   ### API Connect Lab Guide
   
   https://ibm-garage-tsa.github.io/cp4i-demohub/APICDevJam
   
   
-  
+
   
   
