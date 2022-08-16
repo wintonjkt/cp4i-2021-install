@@ -8,19 +8,19 @@
   2. In the top banner, click the plus (+) icon to open the Import YAML dialog box.
   3. Paste this resource definition into the dialog box
   ```
-  apiVersion: operators.coreos.com/v1alpha1
-  kind: CatalogSource
-  metadata:
-    name: ibm-operator-catalog
-    namespace: openshift-marketplace
-  spec:
-    displayName: "IBM Operator Catalog" 
-    publisher: IBM
-    sourceType: grpc
-    image: docker.io/ibmcom/ibm-operator-catalog
-    updateStrategy:
-      registryPoll:
-        interval: 45m
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-operator-catalog
+  namespace: openshift-marketplace
+spec:
+  displayName: IBM Operator Catalog
+  image: 'icr.io/cpopen/ibm-operator-catalog:latest'
+  publisher: IBM
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 45m
   ```
   ## Step 2: Add entitlement key
   
